@@ -16,7 +16,7 @@ public class Main {
 //        appArgs.sourceUrl = "http://www.immonet.de/angebot/22740920?drop=sel";
 
         if (appArgs.hasErrors()) {
-            System.err.println("Argument Error " + appArgs.getErrorMessage());
+            System.err.println("Argument Error: " + appArgs.getErrorMessage());
             return;
         }
 

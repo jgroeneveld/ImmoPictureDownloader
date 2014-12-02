@@ -1,7 +1,6 @@
 package de.jgroeneveld.common;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +19,7 @@ public class Downloader {
     public void download(URL url) throws IOException {
         File destination = new File(targetFolder + "/" + getDestinationFileName(url));
         FileUtils.copyURLToFile(url, destination);
-        System.out.println("Wrote " + url+ " to " + destination.getAbsolutePath());
+        System.out.println("Wrote " + url + " to " + destination.getAbsolutePath());
     }
 
     private String getDestinationFileName(URL url) {

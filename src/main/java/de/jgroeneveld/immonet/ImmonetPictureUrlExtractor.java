@@ -27,6 +27,6 @@ public class ImmonetPictureUrlExtractor implements PictureUrlExtractor {
     }
 
     private String fullPictureUrl(String url) {
-        return url.replaceFirst("_\\d+x\\d+.jpg$",".jpg");
+        return url.replaceFirst("_\\d+x\\d+.jpg$", ".jpg");
     }
 }

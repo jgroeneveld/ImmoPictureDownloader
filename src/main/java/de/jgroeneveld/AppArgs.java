@@ -8,11 +8,11 @@ public class AppArgs {
     public String targetFolder = ".";
 
     public AppArgs(String[] args) {
-        if(args.length >= 1) {
-            sourceUrl= args[0];
+        if (args.length >= 1) {
+            sourceUrl = args[0];
         }
 
-        if(args.length >= 2) {
+        if (args.length >= 2) {
             targetFolder = args[1];
         }
     }
@@ -24,12 +24,16 @@ public class AppArgs {
     public String getErrorMessage() {
         String msg = "";
 
-        if(sourceUrl == null) {
+        if (sourceUrl == null) {
             msg += "sourceUrl is missing\n";
         }
 
-        if(targetFolder == null) {
-            msg += "targetFolder is missing";
+        if (targetFolder == null) {
+            msg += "targetFolder is missing\n";
+        }
+
+        if (msg != "") {
+            msg += "Usage: java -jar ImmonetPictureDownloader.jar sourceUrl[targetFolder]";
         }
 
         return msg;
