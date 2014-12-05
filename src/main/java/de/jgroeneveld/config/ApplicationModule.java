@@ -1,4 +1,4 @@
-package de.jgroeneveld;
+package de.jgroeneveld.config;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;

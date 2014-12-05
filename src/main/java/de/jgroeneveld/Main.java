@@ -2,6 +2,7 @@ package de.jgroeneveld;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import de.jgroeneveld.config.ApplicationModule;
 
 public class Main {
     public static void main(String[] args) {
