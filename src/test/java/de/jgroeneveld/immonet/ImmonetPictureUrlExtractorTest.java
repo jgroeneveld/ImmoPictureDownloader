@@ -16,11 +16,11 @@ import static org.junit.Assert.assertThat;
  * Created by jgroeneveld on 28.11.14.
  */
 public class ImmonetPictureUrlExtractorTest {
-    String fixture = Resources.instance.readResource("/fixtures/immonet.html");
     PictureUrlExtractor pictureUrlExtractor = new ImmonetPictureUrlExtractor();
 
     @Test
     public void extract() throws IOException {
+        String fixture = Resources.instance.readResource("/fixtures/immonet.html");
         Document doc = Jsoup.parse(fixture);
         List<String> urls = pictureUrlExtractor.extract(doc);
 

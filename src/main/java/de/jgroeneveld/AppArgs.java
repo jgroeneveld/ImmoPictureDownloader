@@ -17,6 +17,11 @@ public class AppArgs {
         }
     }
 
+    public AppArgs(String sourceUrl, String targetFolder) {
+        this.sourceUrl = sourceUrl;
+        this.targetFolder = targetFolder;
+    }
+
     public boolean hasErrors() {
         return targetFolder == null || sourceUrl == null;
     }

@@ -9,17 +9,12 @@ import java.net.URL;
 /**
  * Created by jgroeneveld on 02.12.14.
  */
-public class Downloader {
-    private String targetFolder;
-
-    public Downloader(String targetFolder) {
-        this.targetFolder = targetFolder;
-    }
-
-    public void download(URL url) throws IOException {
+public class PictureDownloader {
+    public void download(String targetFolder, URL url) throws IOException {
         File destination = new File(targetFolder + "/" + getDestinationFileName(url));
         FileUtils.copyURLToFile(url, destination);
         System.out.println("Wrote " + url + " to " + destination.getAbsolutePath());
+        getDestinationFileName(url);
     }
 
     private String getDestinationFileName(URL url) {
