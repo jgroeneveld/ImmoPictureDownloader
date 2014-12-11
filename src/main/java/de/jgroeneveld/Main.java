@@ -4,8 +4,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import de.jgroeneveld.config.ApplicationModule;
 
-import java.util.logging.Logger;
-
 public class Main {
     public static void main(String[] args) {
         AppArgs appArgs = new AppArgs(args);

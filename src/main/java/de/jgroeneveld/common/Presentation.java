@@ -1,7 +1,5 @@
 package de.jgroeneveld.common;
 
-import java.io.IOException;
-
 /**
  * Created by jgroeneveld on 11.12.14.
  */

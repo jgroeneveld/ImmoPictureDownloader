@@ -11,7 +11,7 @@ import java.net.URL;
  * Created by jgroeneveld on 02.12.14.
  */
 public class PictureDownloader {
-    Presentation presentation;
+    private Presentation presentation;
 
     @Inject
     public PictureDownloader(Presentation presentation) {
