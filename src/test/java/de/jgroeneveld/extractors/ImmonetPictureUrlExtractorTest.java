@@ -1,4 +1,4 @@
-package de.jgroeneveld.immonet;
+package de.jgroeneveld.extractors;
 
 import de.jgroeneveld.PictureUrlExtractor;
 import de.jgroeneveld.testutil.Resources;
@@ -31,5 +31,4 @@ public class ImmonetPictureUrlExtractorTest {
                 "http://images.immonet.de/71/35/80/323713580.jpg"
         ));
     }
-
 }

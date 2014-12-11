@@ -1,6 +1,6 @@
 package de.jgroeneveld;
 
-import de.jgroeneveld.immonet.ImmonetPictureUrlExtractor;
+import de.jgroeneveld.extractors.ImmonetPictureUrlExtractor;
 
 /**
  * Created by jgroeneveld on 05.12.14.

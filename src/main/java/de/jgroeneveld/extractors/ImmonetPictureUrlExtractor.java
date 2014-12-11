@@ -1,4 +1,4 @@
-package de.jgroeneveld.immonet;
+package de.jgroeneveld.extractors;
 
 import de.jgroeneveld.PictureUrlExtractor;
 import org.jsoup.nodes.Document;
