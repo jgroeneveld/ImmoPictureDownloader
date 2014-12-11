@@ -1,5 +1,6 @@
 package de.jgroeneveld;
 
+import de.jgroeneveld.extractors.ImmobilienscoutPictureUrlExtractor;
 import de.jgroeneveld.extractors.ImmonetPictureUrlExtractor;
 
 /**
@@ -10,6 +11,8 @@ public class PictureUrlExtractorFactory {
         PictureUrlExtractor pictureUrlExtractor;
         if (appArgs.sourceUrl.contains("immonet")) {
             pictureUrlExtractor = new ImmonetPictureUrlExtractor();
+        } else if (appArgs.sourceUrl.contains("immobilienscout")) {
+            pictureUrlExtractor = new ImmobilienscoutPictureUrlExtractor();
         } else {
             return null;
         }
