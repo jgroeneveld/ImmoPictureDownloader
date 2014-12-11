@@ -1,6 +1,5 @@
-package de.jgroeneveld.common;
+package de.jgroeneveld;
 
-import de.jgroeneveld.AppArgs;
 import de.jgroeneveld.immonet.ImmonetPictureUrlExtractor;
 
 /**

@@ -1,9 +1,5 @@
 package de.jgroeneveld;
 
-import de.jgroeneveld.common.DocumentFetcher;
-import de.jgroeneveld.common.PictureDownloader;
-import de.jgroeneveld.common.PictureUrlExtractorFactory;
-import de.jgroeneveld.common.Presentation;
 import de.jgroeneveld.testutil.Resources;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

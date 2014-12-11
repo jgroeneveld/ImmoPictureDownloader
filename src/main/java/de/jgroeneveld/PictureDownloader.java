@@ -1,4 +1,4 @@
-package de.jgroeneveld.common;
+package de.jgroeneveld;
 
 import com.google.inject.Inject;
 import org.apache.commons.io.FileUtils;

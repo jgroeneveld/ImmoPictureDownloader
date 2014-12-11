@@ -1,7 +1,6 @@
 package de.jgroeneveld;
 
 import com.google.inject.Inject;
-import de.jgroeneveld.common.*;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;

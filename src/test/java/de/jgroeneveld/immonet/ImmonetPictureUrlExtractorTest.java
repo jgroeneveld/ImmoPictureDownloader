@@ -1,6 +1,6 @@
 package de.jgroeneveld.immonet;
 
-import de.jgroeneveld.common.PictureUrlExtractor;
+import de.jgroeneveld.PictureUrlExtractor;
 import de.jgroeneveld.testutil.Resources;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.jsoup.Jsoup;

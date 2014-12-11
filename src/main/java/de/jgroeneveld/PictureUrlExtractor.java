@@ -1,4 +1,4 @@
-package de.jgroeneveld.common;
+package de.jgroeneveld;
 
 import org.jsoup.nodes.Document;
 

@@ -1,4 +1,4 @@
-package de.jgroeneveld.common;
+package de.jgroeneveld;
 
 /**
  * Created by jgroeneveld on 11.12.14.
