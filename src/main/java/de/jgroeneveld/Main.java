@@ -4,6 +4,8 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import de.jgroeneveld.config.ApplicationModule;
 
+import java.util.logging.Logger;
+
 public class Main {
     public static void main(String[] args) {
         AppArgs appArgs = new AppArgs(args);
@@ -16,8 +18,8 @@ public class Main {
         }
 
         Injector injector = Guice.createInjector(new ApplicationModule());
-
         Application application = injector.getInstance(Application.class);
+
         application.run(appArgs);
     }
 }

@@ -1,5 +1,6 @@
 package de.jgroeneveld.common;
 
+import com.google.inject.Inject;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -10,10 +11,17 @@ import java.net.URL;
  * Created by jgroeneveld on 02.12.14.
  */
 public class PictureDownloader {
+    Presentation presentation;
+
+    @Inject
+    public PictureDownloader(Presentation presentation) {
+        this.presentation = presentation;
+    }
+
     public void download(String targetFolder, URL url) throws IOException {
         File destination = new File(targetFolder + "/" + getDestinationFileName(url));
         FileUtils.copyURLToFile(url, destination);
-        System.out.println("Wrote " + url + " to " + destination.getAbsolutePath());
+        presentation.display("Wrote " + url + " to " + destination.getAbsolutePath());
         getDestinationFileName(url);
     }
 

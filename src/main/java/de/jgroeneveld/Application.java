@@ -1,10 +1,7 @@
 package de.jgroeneveld;
 
 import com.google.inject.Inject;
-import de.jgroeneveld.common.DocumentFetcher;
-import de.jgroeneveld.common.PictureDownloader;
-import de.jgroeneveld.common.PictureUrlExtractor;
-import de.jgroeneveld.common.PictureUrlExtractorFactory;
+import de.jgroeneveld.common.*;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
@@ -18,9 +15,11 @@ public class Application {
     private PictureDownloader pictureDownloader;
     private PictureUrlExtractorFactory pictureUrlExtractorFactory;
     private DocumentFetcher documentFetcher;
+    private Presentation presentation;
 
     @Inject
-    public Application(DocumentFetcher documentFetcher, PictureUrlExtractorFactory pictureUrlExtractorFactory, PictureDownloader pictureDownloader) {
+    public Application(Presentation presentation, DocumentFetcher documentFetcher, PictureUrlExtractorFactory pictureUrlExtractorFactory, PictureDownloader pictureDownloader) {
+        this.presentation = presentation;
         this.documentFetcher = documentFetcher;
         this.pictureDownloader = pictureDownloader;
         this.pictureUrlExtractorFactory = pictureUrlExtractorFactory;
@@ -29,7 +28,7 @@ public class Application {
     public void run(AppArgs appArgs) {
         PictureUrlExtractor pictureUrlExtractor = pictureUrlExtractorFactory.build(appArgs);
         if (pictureUrlExtractor == null) {
-            System.err.println("url '" + appArgs.sourceUrl + "' not supported (no urlExtractor available)");
+            presentation.displayError("url '" + appArgs.sourceUrl + "' not supported (no urlExtractor available)");
             return;
         }
 
@@ -37,23 +36,23 @@ public class Application {
             Document doc = documentFetcher.fetchDocument(appArgs.sourceUrl);
             List<String> urls = pictureUrlExtractor.extract(doc);
             if (urls.size() > 0) {
-                System.out.println("Found Picture Urls:");
-                urls.stream().forEach(System.out::println);
+                presentation.display("Found Picture Urls:");
+                urls.stream().forEach(presentation::display);
 
                 urls.parallelStream().forEach((urlString) -> {
                     try {
                         URL url = new URL(urlString);
                         pictureDownloader.download(appArgs.targetFolder, url);
                     } catch (IOException e) {
-                        System.err.println("error reading image url " + urlString);
-                        e.printStackTrace();
+                        presentation.displayError("error reading image url " + urlString);
+                        presentation.printStackTrace(e);
                     }
                 });
             } else {
-                System.out.println("No Picture Urls Found");
+                presentation.display("No Picture Urls Found");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            presentation.printStackTrace(e);
         }
     }
 

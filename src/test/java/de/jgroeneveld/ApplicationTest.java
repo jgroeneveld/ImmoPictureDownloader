@@ -3,6 +3,7 @@ package de.jgroeneveld;
 import de.jgroeneveld.common.DocumentFetcher;
 import de.jgroeneveld.common.PictureDownloader;
 import de.jgroeneveld.common.PictureUrlExtractorFactory;
+import de.jgroeneveld.common.Presentation;
 import de.jgroeneveld.testutil.Resources;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -25,6 +26,9 @@ public class ApplicationTest {
     @Mock
     DocumentFetcher documentFetcher;
 
+    @Mock
+    Presentation presentation;
+
     @Before
     public void initMocks() {
         MockitoAnnotations.initMocks(this);
@@ -33,7 +37,7 @@ public class ApplicationTest {
     @Test
     public void testIntegrationWithPictureDownloader() throws IOException {
         Mockito.stub(documentFetcher.fetchDocument("http://immonet.de/stuff")).toReturn(fixtureDocument());
-        Application application = new Application(documentFetcher, pictureUrlExtractorFactory, pictureDownloader);
+        Application application = new Application(presentation, documentFetcher, pictureUrlExtractorFactory, pictureDownloader);
 
         application.run(new AppArgs("http://immonet.de/stuff", "the_target_folder"));
 
