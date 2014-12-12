@@ -1,4 +1,4 @@
-package de.jgroeneveld.testutil;
+package de.jgroeneveld.ipdl.testutil;
 
 /**
  * Created by jgroeneveld on 05.12.14.

@@ -1,4 +1,4 @@
-package de.jgroeneveld;
+package de.jgroeneveld.ipdl;
 
 /**
  * Created by jgroeneveld on 02.12.14.

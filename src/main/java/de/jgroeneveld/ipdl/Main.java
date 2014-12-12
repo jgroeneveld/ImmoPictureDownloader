@@ -1,7 +1,7 @@
-package de.jgroeneveld;
+package de.jgroeneveld.ipdl;
 
 import dagger.Component;
-import de.jgroeneveld.config.ApplicationModule;
+import de.jgroeneveld.ipdl.config.ApplicationModule;
 
 import javax.inject.Singleton;
 import java.util.Objects;
@@ -25,11 +25,6 @@ public class Main {
 
         ApplicationComponent component = Dagger_Main$ApplicationComponent.builder().build();
         component.application().run(appArgs);
-
-//        Injector injector = Guice.createInjector(new ApplicationModule());
-//        Application application = injector.getInstance(Application.class);
-
-//        application.run(appArgs);
     }
 
     private static boolean isDevelopmentEnv() {

@@ -1,7 +1,7 @@
-package de.jgroeneveld;
+package de.jgroeneveld.ipdl;
 
-import de.jgroeneveld.extractors.ImmobilienscoutPictureUrlExtractor;
-import de.jgroeneveld.extractors.ImmonetPictureUrlExtractor;
+import de.jgroeneveld.ipdl.extractors.ImmobilienscoutPictureUrlExtractor;
+import de.jgroeneveld.ipdl.extractors.ImmonetPictureUrlExtractor;
 
 /**
  * Created by jgroeneveld on 05.12.14.

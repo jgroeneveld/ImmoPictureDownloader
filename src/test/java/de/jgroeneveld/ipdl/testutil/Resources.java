@@ -1,4 +1,4 @@
-package de.jgroeneveld.testutil;
+package de.jgroeneveld.ipdl.testutil;
 
 import java.io.File;
 import java.io.IOException;

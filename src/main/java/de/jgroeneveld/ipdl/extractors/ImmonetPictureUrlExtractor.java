@@ -1,6 +1,6 @@
-package de.jgroeneveld.extractors;
+package de.jgroeneveld.ipdl.extractors;
 
-import de.jgroeneveld.PictureUrlExtractor;
+import de.jgroeneveld.ipdl.PictureUrlExtractor;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 

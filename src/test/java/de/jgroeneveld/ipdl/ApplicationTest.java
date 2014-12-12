@@ -1,6 +1,6 @@
-package de.jgroeneveld;
+package de.jgroeneveld.ipdl;
 
-import de.jgroeneveld.testutil.Resources;
+import de.jgroeneveld.ipdl.testutil.Resources;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Before;

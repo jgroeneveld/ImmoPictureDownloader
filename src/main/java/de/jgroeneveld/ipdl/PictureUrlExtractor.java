@@ -1,4 +1,4 @@
-package de.jgroeneveld;
+package de.jgroeneveld.ipdl;
 
 import org.jsoup.nodes.Document;
 

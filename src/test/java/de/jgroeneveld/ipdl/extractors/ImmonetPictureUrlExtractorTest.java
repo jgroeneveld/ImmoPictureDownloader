@@ -1,7 +1,7 @@
-package de.jgroeneveld.extractors;
+package de.jgroeneveld.ipdl.extractors;
 
-import de.jgroeneveld.PictureUrlExtractor;
-import de.jgroeneveld.testutil.Resources;
+import de.jgroeneveld.ipdl.PictureUrlExtractor;
+import de.jgroeneveld.ipdl.testutil.Resources;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
