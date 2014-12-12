@@ -21,6 +21,7 @@ public class ImmobilienscoutPictureUrlExtractorTest {
         @Test
         public void extract() throws IOException {
             String fixture = Resources.instance.readResource("/fixtures/immobilienscout.html");
+//            System.out.println("FIXTURE************************** " + fixture);
             Document doc = Jsoup.parse(fixture);
             List<String> urls = pictureUrlExtractor.extract(doc);
 

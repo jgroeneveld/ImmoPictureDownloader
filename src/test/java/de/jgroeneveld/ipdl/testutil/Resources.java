@@ -21,22 +21,19 @@ public class Resources {
         try {
             return readFile(file);
         } catch (IOException e) {
-            throw new RuntimeException("Resource '" + path + "' not found");
+            throw new RuntimeException("Error reading Resource '" + path + "': " + e);
         }
     }
 
     private String readFile(File file) throws IOException {
         StringBuilder fileContents = new StringBuilder((int) file.length());
-        Scanner scanner = new Scanner(file);
         String lineSeparator = System.getProperty("line.separator");
 
-        try {
+        try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
-                fileContents.append(scanner.nextLine() + lineSeparator);
+                fileContents.append(scanner.nextLine()).append(lineSeparator);
             }
             return fileContents.toString();
-        } finally {
-            scanner.close();
         }
     }
 }

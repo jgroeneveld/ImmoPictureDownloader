@@ -37,7 +37,7 @@ public class AppArgs {
             msg += "targetFolder is missing\n";
         }
 
-        if (msg != "") {
+        if (!msg.isEmpty()) {
             msg += "Usage: java -jar ImmonetPictureDownloader.jar sourceUrl[targetFolder]";
         }
 
