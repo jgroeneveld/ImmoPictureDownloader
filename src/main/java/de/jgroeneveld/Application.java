@@ -1,8 +1,8 @@
 package de.jgroeneveld;
 
-import com.google.inject.Inject;
 import org.jsoup.nodes.Document;
 
+import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -25,6 +25,11 @@ public class Application {
     }
 
     public void run(AppArgs appArgs) {
+        if (appArgs.hasErrors()) {
+            presentation.displayError("Argument Error: " + appArgs.getErrorMessage());
+            return;
+        }
+
         PictureUrlExtractor pictureUrlExtractor = pictureUrlExtractorFactory.build(appArgs);
         if (pictureUrlExtractor == null) {
             presentation.displayError("url '" + appArgs.sourceUrl + "' not supported (no urlExtractor available)");

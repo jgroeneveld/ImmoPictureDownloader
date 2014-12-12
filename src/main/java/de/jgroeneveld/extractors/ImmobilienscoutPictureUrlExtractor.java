@@ -21,7 +21,7 @@ public class ImmobilienscoutPictureUrlExtractor implements PictureUrlExtractor {
         String script = document.head().select("script").get(0).html();
         String galleryDataString = getGalleryDataString(script);
 
-        if(galleryDataString == null) {
+        if (galleryDataString == null) {
             return new ArrayList<>();
         } else {
             return extractPictureUrlsFromGalleryDataString(galleryDataString);
@@ -30,7 +30,7 @@ public class ImmobilienscoutPictureUrlExtractor implements PictureUrlExtractor {
 
     private String getGalleryDataString(String script) {
         Matcher matcher = GALLERY_DATA_PATTERN.matcher(script);
-        if(matcher.find()) {
+        if (matcher.find()) {
             return matcher.group(1);
         } else {
             return null;
@@ -43,7 +43,7 @@ public class ImmobilienscoutPictureUrlExtractor implements PictureUrlExtractor {
 
         List<String> urls = new ArrayList<>(galleryDataString.length());
 
-        for(GalleryItem i : galleryItems) {
+        for (GalleryItem i : galleryItems) {
             urls.add(i.getOriginalPictureUrlClean());
         }
 

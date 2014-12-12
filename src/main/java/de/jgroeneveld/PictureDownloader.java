@@ -1,8 +1,8 @@
 package de.jgroeneveld;
 
-import com.google.inject.Inject;
 import org.apache.commons.io.FileUtils;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;

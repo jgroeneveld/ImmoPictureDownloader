@@ -1,13 +1,29 @@
 package de.jgroeneveld.config;
 
-import com.google.inject.AbstractModule;
+
+import dagger.Module;
+import dagger.Provides;
+import de.jgroeneveld.DocumentFetcher;
+import de.jgroeneveld.PictureUrlExtractorFactory;
+import de.jgroeneveld.Presentation;
 
 /**
  * Created by jgroeneveld on 05.12.14.
  */
-public class ApplicationModule extends AbstractModule {
-    @Override
-    protected void configure() {
+@Module
+public class ApplicationModule {
+    @Provides
+    Presentation presentation() {
+        return new Presentation();
+    }
 
+    @Provides
+    DocumentFetcher documentFetcher() {
+        return new DocumentFetcher();
+    }
+
+    @Provides
+    PictureUrlExtractorFactory pictureUrlExtractorFactory() {
+        return new PictureUrlExtractorFactory();
     }
 }
