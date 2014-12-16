@@ -1,11 +1,15 @@
 # ImmoPictureDownloader
 
   A simple commandline app that downloads all full-size appartment pictures from Immonet and Immobilienscout.
-  Uses Java 8 and dagger2-SNAPSHOT
+  Uses Java 8 and dagger2-SNAPSHOT to be hip.
 
 # How to build
 
     mvn package
+
+# Run tests
+
+    mvn test
 
 # How to run
 
