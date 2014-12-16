@@ -12,18 +12,5 @@ import de.jgroeneveld.ipdl.Presentation;
  */
 @Module
 public class ApplicationModule {
-    @Provides
-    Presentation presentation() {
-        return new Presentation();
-    }
 
-    @Provides
-    DocumentFetcher documentFetcher() {
-        return new DocumentFetcher();
-    }
-
-    @Provides
-    PictureUrlExtractorFactory pictureUrlExtractorFactory() {
-        return new PictureUrlExtractorFactory();
-    }
 }
